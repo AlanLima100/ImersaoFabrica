@@ -1,3 +1,16 @@
 from django.db import models
-# bancos de dados
-# Create your models here.
+
+
+class Postagem(models.Model):
+    titulo = models.CharField(max_length=80)
+
+    conteudo = models.TextField()
+
+    data_publicacao = models.DateField(auto_now_add=True)
+    
+    clube_futebol = models.CharField(max_length=80)
+
+    jogador_favorito = models.CharField(max_length=80)
+
+    def __str__(self):
+        return self.titulo
